@@ -1,0 +1,59 @@
+*{
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-weight: 100;
+}
+.container{
+    padding: 20px 5px;
+    background: #86f;
+}
+.caja{
+    background: #025;
+    height: 80px;
+    width: 80px;
+    /* a que propiedad le daremos la transicion */
+    /* usando comas(,) se separa la indicacion */
+    transition-property: left,background;
+    /* que duracion tendra la transicion */
+    transition-duration: 2s,4s;
+    /* esto hara que la transicion tarde en accionar */
+    /* transition-delay: 3s; */
+    margin: 20px;
+    position: relative;
+    left: 0;
+}
+/* el > seleciona a los hijos directos, es decir los elementos dentro del padre */
+.container:hover > .caja{
+    left: 80%;
+    background: white;
+}
+/* .caja:hover{
+    background: lightgreen;
+    left: 80%;
+} */
+/* Selecciona el primer hijo de su elemento padre (en este caso, el primer elemento con la clase "caja") */
+.caja:first-child{
+    /* Establece una transición con una velocidad de cambio lineal */
+    transition-timing-function: linear;
+}
+
+/* Selecciona el segundo hijo de su elemento padre (en este caso, el segundo elemento con la clase "caja") */
+.caja:nth-child(2){
+    /* Establece una transición con una velocidad de cambio suave al inicio */
+    transition-timing-function: ease;
+}
+
+.caja:nth-child(3){
+    /* Establece una transición con una velocidad de cambio suave al inicio, pero más rápida que la transición del segundo elemento */
+    transition-timing-function: ease-in;
+}
+
+.caja:nth-child(4){
+    /* Establece una transición con una velocidad de cambio suave al final */
+    transition-timing-function: ease-out;
+}
+
+.caja:nth-child(5){
+    /* Establece una transición con una velocidad de cambio suave al inicio y al final */
+    transition-timing-function: ease-in-out;
+}
